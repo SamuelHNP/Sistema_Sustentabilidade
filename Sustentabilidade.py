@@ -52,7 +52,6 @@ while not digitou_corretamente4:
     else:
         digitou_corretamente4=True
 
-
         if por_residuos >50 :
             por_residuos_susten="Alta Sustentabilidade"
         elif por_residuos <=20 or por_residuos <=50: 
@@ -77,6 +76,24 @@ while not digitou_corretamente6:
         print("Apenas letras maiúsculas ou S/N")
     else:
         digitou_corretamente6=True
+        
+digitou_corretamente7=False
+while not digitou_corretamente7:
+    try:
+        caminhada = input("Você costuma caminhar como meio de transporte? (S/N): ").strip().upper()
+    except ValueError: 
+        print("Apenas letras maiúsculas ou S/N")
+    else:
+        digitou_corretamente7=True
+
+digitou_corretamente8=False
+while not digitou_corretamente8:
+    try:
+        carro_fossil = input("Você usa carro com combustível fóssil? (S/N): ").strip().upper()
+    except ValueError: 
+        print("Apenas letras maiúsculas ou S/N")
+    else:
+        digitou_corretamente8=True
 
 print("\n---------------SUSTENTABILIDADE---------------")
 print("\nConsumo de Água: ",agua_susten,"com ",l_agua,"litros")
