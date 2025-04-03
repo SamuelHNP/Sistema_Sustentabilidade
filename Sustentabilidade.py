@@ -94,6 +94,40 @@ while not digitou_corretamente8:
         print("Apenas letras maiúsculas ou S/N")
     else:
         digitou_corretamente8=True
+digitou_corretamente9=False
+while not digitou_corretamente9:
+    try:
+        carro_eletrico = input("Você usa carro elétrico? (S/N): ").strip().upper()
+    except ValueError:
+        print("Apenas letras maiúsculas ou S/N")
+    else:
+        digitou_corretamente9=True
+
+digitou_corretamente10=False
+while not digitou_corretamente10:
+    try:   
+        carona_fossil = input("Você usa carona compartilhada com carro a combustíveis fósseis? (S/N): ").strip().upper()
+    except ValueError:
+        print("Apenas letras maiúsculas ou S/N ")
+    else: 
+        digitou_corretamente10=True
+
+    usa_transporte_publico = transporte_publico == "S"
+    usa_bicicleta = bicicleta == "S"
+    usa_caminhada = caminhada == "S"
+    usa_carro_fossil = carro_fossil == "S"
+    usa_carro_eletrico = carro_eletrico == "S"
+    usa_carona_fossil = carona_fossil == "S"
+
+    if (usa_transporte_publico or usa_bicicleta or usa_caminhada) and usa_carro_eletrico:
+        sustentabilidade = "Alta sustentabilidade"
+    elif usa_transporte_publico or usa_carro_eletrico:
+        sustentabilidade = "Moderada sustentabilidade"
+    elif usa_carro_fossil or usa_carona_fossil:
+        sustentabilidade = "Baixa sustentabilidade"
+    else:
+        sustentabilidade = "Sustentabilidade não definida"
+
 
 print("\n---------------SUSTENTABILIDADE---------------")
 print("\nConsumo de Água: ",agua_susten,"com ",l_agua,"litros")
@@ -101,4 +135,4 @@ print("\nConsumo de Energia: ",energia_susten,"com ",energia,"Kwh")
 print("\nGeração de Resíduos Não Recicláveis: ",por_residuos_susten,"com porcentagem de: ",por_residuos)
 print("\nUso de transportes foi de: ",sustentabilidade)
 print()
-#print("Uso de Transporte: ",transport)
+print("Uso de Transporte: ",transport)
