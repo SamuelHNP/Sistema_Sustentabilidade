@@ -33,12 +33,7 @@ while not digitou_corretamente2:
             energia_susten="Moderada Sustentabilidade"
         elif energia > 10:
             energia_susten="Baixa Sustentabilidade"
-
-
-print("Sistema de Monitoramento de Sustentabilidade")
-
-data=input("\nQual é a Data?: ")
-
+            
 digitou_corretamente3=False
 while not digitou_corretamente3:
     try: 
