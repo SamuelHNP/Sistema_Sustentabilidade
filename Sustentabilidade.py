@@ -37,11 +37,18 @@ while not digitou_corretamente2:
 digitou_corretamente3=False
 while not digitou_corretamente3:
     try: 
-        kg_residuos=float(input("\nQuantos kg de resíduos não recicláveis você gerou hoje?: "))
+        kg_residuos=float(input("\nQuantos kg de resíduos não recicláveis você gerou hoje? Se for em gramas, preencha '0.!!!'': "))
     except ValueError:
         print("Digitar apenas números válidos!")
     else:
         digitou_corretamente3=True
+
+        if kg_residuos <= 0.770: #770 gramas
+            kg_residuos_susten="Alta Sustentabilidade"
+        elif kg_residuos <= 0.770 or kg_residuos <=1.54: 
+            kg_residuos_susten="Moderada Sustentabilidade"
+        elif kg_residuos > 1.54:
+            kg_residuos_susten="Baixa Sustentabilidade"
 
 digitou_corretamente4=False
 while not digitou_corretamente4:
@@ -94,6 +101,7 @@ while not digitou_corretamente8:
         print("Apenas letras maiúsculas ou S/N")
     else:
         digitou_corretamente8=True
+
 digitou_corretamente9=False
 while not digitou_corretamente9:
     try:
@@ -128,11 +136,10 @@ while not digitou_corretamente10:
     else:
         sustentabilidade = "Sustentabilidade não definida"
 
-
 print("\n---------------SUSTENTABILIDADE---------------")
 print("\nConsumo de Água: ",agua_susten,"com ",l_agua,"litros")
 print("\nConsumo de Energia: ",energia_susten,"com ",energia,"Kwh")
-print("\nGeração de Resíduos Não Recicláveis: ",por_residuos_susten,"com porcentagem de: ",por_residuos)
+print("\nGeração de Resíduos não Recicláveis por KG: ", kg_residuos_susten,"com", kg_residuos, "KG")
+print("\nGeração de Resíduos Recicláveis: ",por_residuos_susten,"com porcentagem de ",por_residuos,"%")
 print("\nUso de transportes foi de: ",sustentabilidade)
 print()
-#print("Uso de Transporte: ",transport)
