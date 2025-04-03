@@ -34,10 +34,32 @@ while not digitou_corretamente2:
         elif energia > 10:
             energia_susten="Baixa Sustentabilidade"
 
+
+print("Sistema de Monitoramento de Sustentabilidade")
+
+data=input("\nQual é a Data?: ")
+
+digitou_corretamente3=False
+while not digitou_corretamente3:
+    try: 
+        kg_residuos=float(input("\nQuantos kg de resíduos não recicláveis você gerou hoje?: "))
+    except ValueError:
+        print("Digitar apenas números válidos!")
+    else:
+        digitou_corretamente3=True
+
+digitou_corretamente4=False
+while not digitou_corretamente4:
+    try:
+        por_residuos=float(input("\nQual a porcentagem de resíduos reciclados no total (em %)?: "))
+    except ValueError:
+        print("Apenas números válidos!")
+    else:
+        digitou_corretamente4=True
 print("\n---------------SUSTENTABILIDADE---------------")
 print("\nConsumo de Água: ",agua_susten,"com ",l_agua,"litros")
 print("\nConsumo de Energia: ",energia_susten,"com ",energia,"Kwh")
-#print("\nGeração de Resíduos Não Recicláveis: ",por_residuos_susten,"com porcentagem de: ",por_residuos)
+print("\nGeração de Resíduos Não Recicláveis: ",por_residuos_susten,"com porcentagem de: ",por_residuos)
 #print("\nUso de transportes foi de: ",sustentabilidade)
 print()
 #print("Uso de Transporte: ",transport)
