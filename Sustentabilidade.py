@@ -15,7 +15,7 @@ while not digitou_corretamente:
             agua_susten="Alta sustentabilidade"
         elif l_agua <= 150 or l_agua <=200:
             agua_susten="Moderada Sustentabilidade"
-        elif l_agua > 220:
+        elif l_agua > 200:
             agua_susten="Baixa Sustentabilidade"
 
 digitou_corretamente2=False
