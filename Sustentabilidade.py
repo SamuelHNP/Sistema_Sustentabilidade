@@ -56,10 +56,37 @@ while not digitou_corretamente4:
         print("Apenas números válidos!")
     else:
         digitou_corretamente4=True
+
+
+        if por_residuos >50 :
+            por_residuos_susten="Alta Sustentabilidade"
+        elif por_residuos <=20 or por_residuos <=50: 
+            por_residuos_susten="Moderada Sustentabilidade"
+        elif por_residuos <20: 
+            por_residuos_susten="Baixa Sustentabilidade"
+
+digitou_corretamente5=False
+while not digitou_corretamente5:
+    try:
+        transporte_publico = input("\nVocê usa transporte público (ônibus, metrô, trem)? (S/N): ").strip().upper()
+    except ValueError:
+        print("Apenas letras maiúsculas ou S/N")
+    else:
+        digitou_corretamente5=True
+
+digitou_corretamente6=False
+while not digitou_corretamente6:
+    try:
+        bicicleta = input("Você usa bicicleta? (S/N): ")
+    except ValueError:
+        print("Apenas letras maiúsculas ou S/N")
+    else:
+        digitou_corretamente6=True
+
 print("\n---------------SUSTENTABILIDADE---------------")
 print("\nConsumo de Água: ",agua_susten,"com ",l_agua,"litros")
 print("\nConsumo de Energia: ",energia_susten,"com ",energia,"Kwh")
 print("\nGeração de Resíduos Não Recicláveis: ",por_residuos_susten,"com porcentagem de: ",por_residuos)
-#print("\nUso de transportes foi de: ",sustentabilidade)
+print("\nUso de transportes foi de: ",sustentabilidade)
 print()
 #print("Uso de Transporte: ",transport)
