@@ -1,6 +1,37 @@
 print("Sistema de Monitoramento de Sustentabilidade")
 
-data=input("\nQual é a Data?: ")
+try: 
+    dia=int(input("Digite o dia: "))
+except ValueError:
+    print("O dia deve ser um valor inteiro!")
+else: 
+    if dia<0 or dia>31: 
+        print("Valor inválido para dia!")
+    else:
+        try: 
+            mes=int(input("Digite o mes: "))
+        except ValueError: 
+            print("O mês deve ser um valor inteiro!")
+        else:
+            if mes<0 or mes>12: 
+                print("Valor inválido para mês!")
+            else:
+                if dia>30 and (mes==4 or mes==6 or mes==9 or mes==11):
+                    print("Valor de dia e de mês incompatíveis um com o outro!")
+                else: 
+                    if dia>29 and mes==2:
+                        print("Valor de dia e de mês incompatíveis um com o outro!")
+                    else: 
+                        try: 
+                            ano=int(input("Digite o ano: "))
+                        except ValueError: 
+                            print("O ano deve ser um valor inteiro!")
+                        else: 
+                            if ano<-45:
+                                print("Este programa não valida datas com anos anteriores a 46ac, antes do calendário juliano!")
+                            else:
+                                if ano==0: 
+                                    print("Não existiu ano 0!")
 
 digitou_corretamente=False
 while not digitou_corretamente:
@@ -37,7 +68,7 @@ while not digitou_corretamente2:
 digitou_corretamente3=False
 while not digitou_corretamente3:
     try: 
-        kg_residuos=float(input("\nQuantos kg de resíduos não recicláveis você gerou hoje? Se for em gramas, preencha '0.!!!'': "))
+        kg_residuos=float(input("\nQuantos kg de resíduos não recicláveis você gerou hoje? Se for em gramas, preencha '0.!!!': "))
     except ValueError:
         print("Digitar apenas números válidos!")
     else:
@@ -137,6 +168,7 @@ while not digitou_corretamente10:
         sustentabilidade = "Sustentabilidade não definida"
 
 print("\n---------------SUSTENTABILIDADE---------------")
+print("\nData: ",dia,"/",mes,"/",ano)
 print("\nConsumo de Água: ",agua_susten,"com ",l_agua,"litros")
 print("\nConsumo de Energia: ",energia_susten,"com ",energia,"Kwh")
 print("\nGeração de Resíduos não Recicláveis por KG: ", kg_residuos_susten,"com", kg_residuos, "KG")
