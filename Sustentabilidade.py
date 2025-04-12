@@ -1,37 +1,39 @@
 print("Sistema de Monitoramento de Sustentabilidade")
 
-try: 
-    dia=int(input("Digite o dia: "))
-except ValueError:
-    print("O dia deve ser um valor inteiro!")
-else: 
-    if dia<0 or dia>31: 
-        print("Valor inválido para dia!")
-    else:
-        try: 
-            mes=int(input("Digite o mes: "))
-        except ValueError: 
-            print("O mês deve ser um valor inteiro!")
-        else:
-            if mes<0 or mes>12: 
-                print("Valor inválido para mês!")
-            else:
-                if dia>30 and (mes==4 or mes==6 or mes==9 or mes==11):
-                    print("Valor de dia e de mês incompatíveis um com o outro!")
-                else: 
-                    if dia>29 and mes==2:
-                        print("Valor de dia e de mês incompatíveis um com o outro!")
-                    else: 
-                        try: 
-                            ano=int(input("Digite o ano: "))
-                        except ValueError: 
-                            print("O ano deve ser um valor inteiro!")
-                        else: 
-                            if ano<-45:
-                                print("Este programa não valida datas com anos anteriores a 46ac, antes do calendário juliano!")
-                            else:
-                                if ano==0: 
-                                    print("Não existiu ano 0!")
+#Entrada de dia, mês e ano, e validações
+#---------------------------------------#
+while True:
+    try:
+        dia = int(input("Digite o dia: "))
+        if dia < 1 or dia > 31:
+            print("Valor inválido para dia!")
+            continue
+        break
+    except ValueError:
+        print("O dia deve ser um valor inteiro!")
+
+while True:
+    try:
+        mes = int(input("Digite o mês: "))
+        if mes < 1 or mes > 12:
+            print("Valor inválido para mês!")
+            continue
+        break
+    except ValueError:
+        print("O mês deve ser um valor inteiro!")
+
+while True:
+    try:
+        ano = int(input("Digite o ano: "))
+        if ano < -45:
+            print("Este programa não valida datas com anos anteriores a 46ac, antes do calendário juliano!")
+            continue
+        if ano == 0:
+            print("Não existiu ano 0!")
+            continue
+        break
+    except ValueError:
+        print("O ano deve ser um valor inteiro!")
 
 digitou_corretamente=False
 while not digitou_corretamente:
