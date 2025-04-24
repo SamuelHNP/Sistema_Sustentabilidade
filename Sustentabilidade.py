@@ -1,3 +1,53 @@
+print("Sistema de Monitoramento de Sustentabilidade")
+
+#Entrada de dia, mês e ano, e validações
+#--------------------------------------
+
+digitou_nome=False
+while not digitou_nome:
+    usuario = input("\nDigite seu nome (até 45 caracteres): ").strip()
+    if len(usuario) == 0:
+        print("O nome não pode estar vazio!")
+    elif len(usuario) > 45:
+        print("O nome deve ter no máximo 45 caracteres!")
+    else:
+        digitou_nome=True
+        
+while True:
+    try:
+        dia = int(input("\nDigite o dia: "))
+        if dia < 1 or dia > 31:
+            print("Valor inválido para dia!")
+            continue
+        break
+    except ValueError:
+        print("O dia deve ser um valor inteiro!")
+
+while True:
+    try:
+        mes = int(input("Digite o mês: "))
+        if mes < 1 or mes > 12:
+            print("Valor inválido para mês!")
+            continue
+        break
+    except ValueError:
+        print("O mês deve ser um valor inteiro!")
+
+while True:
+    try:
+        ano = int(input("Digite o ano: "))
+        if ano < -45:
+            print("Este programa não valida datas com anos anteriores a 46ac, antes do calendário juliano!")
+            continue
+        if ano == 0:
+            print("Não existiu ano 0!")
+            continue
+        break
+    except ValueError:
+        print("O ano deve ser um valor inteiro!")
+    
+data = f"{dia:02d}/{mes:02d}/{ano}"
+
 '''----------------\\COMEÇO SUSTENTABILIDADE\\----------------'''
 
 digitou_corretamente=False
