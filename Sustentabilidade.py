@@ -1,3 +1,30 @@
+digitou_corretamente7 = False
+while not digitou_corretamente7:
+    resposta = input("Você costuma caminhar como meio de transporte? (S/N): ").upper()
+    if resposta in ['S', 'N']:
+        caminhada = resposta == 'S'
+        digitou_corretamente7 = True
+    else:
+        print("Entrada inválida. Digite apenas 'S' para Sim ou 'N' para Não.")
+
+digitou_corretamente8 = False
+while not digitou_corretamente8:
+    resposta = input("Você usa carro com combustível fóssil? (S/N): ").upper()
+    if resposta in ['S', 'N']:
+        carro_fossil = resposta == 'S'
+        digitou_corretamente8 = True
+    else:
+        print("Entrada inválida. Digite apenas 'S' para Sim ou 'N' para Não.")
+
+digitou_corretamente9 = False
+while not digitou_corretamente9:
+    resposta = input("Você usa carro elétrico? (S/N): ").upper()
+    if resposta in ['S', 'N']:
+        carro_eletrico = resposta == 'S'
+        digitou_corretamente9 = True
+    else:
+        print("Entrada inválida. Digite apenas 'S' para Sim ou 'N' para Não.")
+        
 """----------------------///BANCO DE DADOS///----------------------"""
 # Conexão com o banco e gravação dos dados
 import pymysql
