@@ -1,3 +1,39 @@
+digitou_corretamente4=False
+while not digitou_corretamente4:
+    try:
+        por_residuos=float(input("\nQual a porcentagem de resíduos reciclados no total (em %)?: "))
+    except ValueError:
+        print("Apenas números válidos!")
+    else:
+        digitou_corretamente4=True
+
+        if por_residuos <20 :
+            por_residuos_susten="Baixa Sustentabilidade"
+        elif por_residuos <=20 or por_residuos <= 50: 
+            por_residuos_susten="Moderada Sustentabilidade"
+        elif por_residuos > 50: 
+            por_residuos_susten="Alta Sustentabilidade"
+
+'''--------------------SIM/NÃO SUSTENTABILIDADE--------------------'''
+
+digitou_corretamente5 = False
+while not digitou_corretamente5:
+    resposta = input("\nVocê usa transporte público (ônibus, metrô, trem)? (S/N): ").upper()
+    if resposta in ['S', 'N']:
+        transporte_publico = resposta == 'S'
+        digitou_corretamente5 = True
+    else:
+        print("Entrada inválida. Digite apenas 'S' para Sim ou 'N' para Não.")
+
+digitou_corretamente6 = False
+while not digitou_corretamente6:
+    resposta = input("Você usa bicicleta? (S/N): ").upper()
+    if resposta in ['S', 'N']:
+        bicicleta = resposta == 'S'
+        digitou_corretamente6 = True
+    else:
+        print("Entrada inválida. Digite apenas 'S' para Sim ou 'N' para Não.")
+
 digitou_corretamente7 = False
 while not digitou_corretamente7:
     resposta = input("Você costuma caminhar como meio de transporte? (S/N): ").upper()
