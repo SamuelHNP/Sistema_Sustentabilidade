@@ -114,6 +114,50 @@ while not digitou_corretamente4:
         elif por_residuos > 50: 
             por_residuos_susten="Alta Sustentabilidade"
 
+'''--------------------SIM/NÃO SUSTENTABILIDADE--------------------'''
+digitou_corretamente10 = False
+while not digitou_corretamente10:
+    resposta = input("Você usa carona compartilhada com carro a combustíveis fósseis? (S/N): ").upper()
+    if resposta in ['S', 'N']:
+        carona_fossil = resposta == 'S'
+        digitou_corretamente10 = True
+    else:
+        print("Entrada inválida. Digite apenas 'S' para Sim ou 'N' para Não.")
+
+sustentavel = 0
+naoSustentavel = 0
+
+#Se usar, irá acrecentar mais 1, para que no final possa ser classificado
+if transporte_publico:
+    sustentavel += 1
+if bicicleta:
+    sustentavel += 1
+if caminhada:
+    sustentavel += 1
+if carro_fossil:
+    naoSustentavel += 1
+if carro_eletrico:
+    sustentavel += 1
+if carona_fossil:
+    naoSustentavel += 1
+
+print("\n---------------SUSTENTABILIDADE---------------")
+print("\nNome do Usúario: ",usuario)
+print("Data: ",dia,"/",mes,"/",ano)
+print("\nConsumo de Água: ",agua_susten,"com ",l_agua,"litros")
+print("\nConsumo de Energia: ",energia_susten,"com ",energia,"Kwh")
+print("\nGeração de Resíduos não Recicláveis por KG: ", kg_residuos_susten,"com", kg_residuos, "KG")
+print("\nGeração de Resíduos Recicláveis: ",por_residuos_susten,"com porcentagem de ",por_residuos,"%")
+
+if sustentavel == 0 and naoSustentavel == 0:
+    print("\nSustentabilidade Indefinida")
+elif sustentavel >= 1 and naoSustentavel == 0:
+    print("\nUso de transporte: Alta sustentabilidade")
+elif sustentavel == 0 and naoSustentavel >= 1:
+    print("\nUso de transporte: Baixa sustentabilidade")
+else:
+    print("\nUso de transporte: Sustentabilidade moderada")
+print()
         
 """----------------------///BANCO DE DADOS///----------------------"""
 # Conexão com o banco e gravação dos dados
