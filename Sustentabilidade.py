@@ -272,11 +272,39 @@ for row in cursor:
     media_residuos = row[2]
     media_residuos_reciclaveis = row[3]
 
+    if media_agua <150:
+        agua_susten2="Alta sustentabilidade"
+    elif media_agua<= 150 or l_agua <=200:
+        agua_susten="Moderada Sustentabilidade"
+    elif media_agua > 200:
+        agua_susten2="Baixa Sustentabilidade"
+
+    if media_energia < 5:
+        energi_susten2="Alta Sustentabilidade"
+    elif media_energia <=5 or media_energia<=10:
+        energia_susten2="Moderada Sustentabilidade"
+    elif media_energia > 10:
+        energia_susten2="Baixa Sustentabilidade"
+
+    if media_residuos <= 0.770: #770 gramas
+        kg_residuos_susten2="Alta Sustentabilidade"
+    elif media_residuos <= 0.770 or media_residuos <=1.54: 
+        kg_residuos_susten2="Moderada Sustentabilidade"
+    elif media_residuos > 1.54:
+        kg_residuos_susten2="Baixa Sustentabilidade"
+
+    if media_residuos_reciclaveis <20 :
+        por_residuos_susten2="Baixa Sustentabilidade"
+    elif media_residuos_reciclaveis <=20 or media_residuos_reciclaveis <= 50: 
+        por_residuos_susten2="Moderada Sustentabilidade"
+    elif media_residuos_reciclaveis > 50: 
+        por_residuos_susten2="Alta Sustentabilidade"
+
     print("\n---------------MÉDIAS DOS DADOS DO BANCO---------------")
-    print(f"\nMédia de Consumo de Água: {media_agua:.2f} litros")
-    print(f"Média de Consumo de Energia: {media_energia:.2f} KWh")
-    print(f"Média de Resíduos Não Recicláveis: {media_residuos:.2f} KG")
-    print(f"Média de Resíduos Recicláveis: {media_residuos_reciclaveis:.2f} %")
+    print(f"\nMédia de Consumo de Água: {media_agua:.2f} litros, considerado: ",agua_susten2)
+    print(f"Média de Consumo de Energia: {media_energia:.2f} KWh, considerado: ",energia_susten2)
+    print(f"Média de Resíduos Não Recicláveis: {media_residuos:.2f} KG, considerado: ",kg_residuos_susten2)
+    print(f"Média de Resíduos Recicláveis: {media_residuos_reciclaveis:.2f} %, considerado: ",por_residuos_susten2)
 
 cursor.close()
 conexao.close()
